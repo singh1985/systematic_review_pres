@@ -3,9 +3,9 @@ title: "Systematic Literature Review"
 author: "Abhay Singh"
 number_sections: true
 output:
+  pdf_document: default
   bookdown::word_document2:
     toc: true
-  pdf_document: default
   html_document:
     df_print: paged
   word_document: default
@@ -150,6 +150,21 @@ NetMatrix <- biblioNetwork(M, analysis = "collaboration",  network = "authors", 
 net=networkPlot(NetMatrix,  n = 20, Title = "Author collaboration",type = "auto", size=10,size.cex=T,edgesize = 3,labelsize=0.6)
 ```
 
+# Thematic Map
+
+Co-word analysis draws clusters of keywords. They are considered as themes, whose density and centrality can be used in classifying themes and mapping in a two-dimensional diagram.
+
+Thematic map is a very intuitive plot and we can analyze themes according to the quadrant in which they are placed: (1) upper-right quadrant: motor-themes; (2) lower-right quadrant: basic themes; (3) lower-left quadrant: emerging or disappearing themes; (4) upper-left quadrant: very specialized/niche themes.
+
+
+
+
+
+```{r ThematicMap, echo=TRUE, fig.height=9, fig.width=9}
+#Map2=thematicEvolution(M3,field="ID",n=1000,stemming=FALSE,repel=TRUE,years=2000)
+Map=thematicMap(M, field = "ID", n = 1000, minfreq = 5,stemming = FALSE, size = 0.5, n.labels=4, repel = TRUE)
+plot(Map$map)
+```
 
 # There is a gui too!
 
