@@ -76,7 +76,7 @@ pander(d3,caption="Most Cited Papers")
 
 ## Information Plots
 
-```{r,eval=TRUE,results="hide",fig.show="hide"}
+```{r,eval=TRUE,results="hide",fig.show='hide'}
 p1=plot(res1,pause=FALSE)
 ```
 ## Summary Plot-1 (Most Porductive Authors)
@@ -84,7 +84,9 @@ p1=plot(res1,pause=FALSE)
 ```{r}
 library(ggplot2)
 theme_set(theme_bw())
-p1[[1]]+theme_bw()
+
+
+p1[[1]]+theme_bw()+scale_x_discrete(limits =rev(levels(as.factor(p1[[1]]$data$AU))))
 ```
 ## Summary Plot-2 (Most Productive Countries)
 
