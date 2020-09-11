@@ -62,6 +62,7 @@ pander(d1,caption="Summary Information")
 ## Productive Authors
 
 ```{r}
+s1$MostProdAuthors
 pander(d2,caption="Most Productive Authors",table.split=Inf) 
 
 ```
